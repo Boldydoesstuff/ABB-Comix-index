@@ -37,7 +37,7 @@
             transform: translateY(0);
         }
     .nav-button:hover {
-            background: #0f0f0f0;
+            background: #f0f0f0;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             color: #000000;}
@@ -64,9 +64,9 @@
 <body>
     <!-- Fixed navigation bar with redirect buttons -->
     <nav class="fixed-nav">
-        <a href="db.html" class="nav-button"><D>D.B.</D></a>
-        <a href="fuugashi.html" class="nav-button">Fuugashi</a>
-        <a href="bomber.html" class="nav-button">Bomber</a>
+        <a href="Href files/db.html.HTML" class="nav-button"><D>D.B.</D></a>
+        <a href="Href files/fuugashi.html.html" class="nav-button">Fuugashi</a>
+        <a href="Href files/boomber.html.html" class="nav-button">Bomber</a>
        
     </nav>
 
@@ -93,5 +93,145 @@
         <h1>Contacts</h1>
         <p>we dont have one duh.</p>
     </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* Fixed navigation bar at the top */
+        .fixed-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Button styling */
+        .nav-button {
+            background: white;
+            color: #000000;
+            padding: 10px 25px;
+            margin: 0 8px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Button hover effect */
+        .nav-button:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            color: #000000;
+        }
+
+        /* Button click effect */
+        .nav-button:active {
+            transform: translateY(0);
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background: #1a1a2e;
+            color: #eaeaea;
+        }
+
+        body.dark-mode .page-section {
+            background: #16213e !important;
+            color: #eaeaea;
+        }
+
+        body.dark-mode .fixed-nav {
+            background: linear-gradient(135deg, #4a148c 0%, #311b92 100%);
+        }
+
+        body.dark-mode .nav-button {
+            background: #eaeaea;
+            color: #4a148c;
+        }
+
+        body.dark-mode .nav-button:hover {
+            background: #ffffff;
+            color: #311b92;
+        }
+
+        /* Add padding to body so content isn't hidden behind fixed nav */
+        body {
+            margin: 0;
+            padding-top: 70px;
+            font-family: Arial, sans-serif;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Sample content sections */
+        .page-section {
+            padding: 40px 20px;
+            min-height: 300px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .home { background: #f5f5f5; }
+        .about { background: #e8e8e8; }
+        .services { background: #dcdcdc; }
+        .contact { background: #d0d0d0; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed-nav">
+        <div class="nav-left">
+            <a href="db.html" class="nav-button">D.B.</a>
+            <a href="fuugashi.html" class="nav-button">Fuugashi</a>
+            <a href="bomber.html" class="nav-button">Bomber</a>
+        </div>
+        <button id="darkModeToggle" class="nav-button">🌙 Dark Mode</button>
+    </nav>
+
+
+    </div>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.textContent = '☀️ Light Mode';
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.textContent = '☀️ Light Mode';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                darkModeToggle.textContent = '🌙 Dark Mode';
+            }
+        });
+    </script>
 </body>
 </html>
